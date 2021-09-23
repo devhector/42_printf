@@ -11,7 +11,7 @@ FLAGLIB			= -rcs
 LIBFT_FOLDER	= ./libft
 LIBFT			= ./libft/libft.a
 
-FUNCTIONS		= ft_printf.o
+FUNCTIONS		= ft_printf.c
 
 OBJECTS			= $(FUNCTIONS: %.o)
 
