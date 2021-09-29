@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/09/29 17:40:15 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/09/29 19:39:45 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 		return (ft_putstr(va_arg(ap, char *)));
 	else if (fmt[i + 1] == 'd' || fmt[i + 1] == 'i')
 		return (ft_putnbr(va_arg(ap, int)));
-	return (0);	 
+	return (0);
 }
