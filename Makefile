@@ -8,7 +8,7 @@ CFLAGS			= -Wall -Wextra -Werror -g
 CC				= clang
 FLAGLIB			= -rcs
 
-LIBFT_FOLDER	= ./libft
+LIBFT_DIR		= ./libft
 LIBFT			= ./libft/libft.a
 
 FUNCTIONS		= ft_printf.c
@@ -22,7 +22,7 @@ $(NAME): $(OBJECTS) $(LIBFT)
 	ranlib $(NAME)
 
 $(LIBFT): $(LIBFT_FOLDER)
-	make -C $(LIBFT_FOLDER)
+	$(MAKE) -C $(LIBFT_FOLDER)
 
-$(OBJ)/%.o: $(SRC)/%.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c -I $(INCLUDE) $(LIBFT) $< -o $@
+%.o: %.c $(INCLUDE)
+	$(CC) $(CFLAGS) -c -I $(INCLUDE) $(LIBFT) $< -o $(OBJ)/$@
