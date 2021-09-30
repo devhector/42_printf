@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/09/29 19:39:45 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/09/29 21:03:24 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int ft_putstr(char *str)
 int ft_putnbr(int nbr)
 {
 	return (ft_putstr(ft_itoa(nbr)));
+}
+
+int	put_nbr_u(unsigned int nbr)
+{
+	return (ft_putstr(ft_utoa(nbr)));
 }
 
 int ft_printf(const char *format, ...)
@@ -69,5 +74,7 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 		return (ft_putstr(va_arg(ap, char *)));
 	else if (fmt[i + 1] == 'd' || fmt[i + 1] == 'i')
 		return (ft_putnbr(va_arg(ap, int)));
+	else if (fmt[i + 1] == 'u')
+		return (ft_putnbr(va_arg(ap, unsigned int)));
 	return (0);
 }
