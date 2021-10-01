@@ -6,13 +6,13 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:35:27 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/09 13:53:23 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:54:53 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char	*s, int	c)
+char	*ft_strrchr(const char	*s, int c)
 {
 	char	*p;
 

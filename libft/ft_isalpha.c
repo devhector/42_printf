@@ -6,11 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:33:27 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/02 16:33:28 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:13:37 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int	c)
+int	ft_isalpha(int c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

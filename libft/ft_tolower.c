@@ -6,11 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:35:38 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/02 16:35:39 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:10:36 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int	c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

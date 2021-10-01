@@ -6,11 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:35:44 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/02 16:35:45 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:08:14 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int	c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

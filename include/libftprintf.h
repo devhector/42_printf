@@ -1,9 +1,21 @@
-#ifndef LIBFTPRINTF_H
-#define LIBFTPRINTF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/01 19:20:03 by hectfern          #+#    #+#             */
+/*   Updated: 2021/10/01 19:20:50 by hectfern         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include "../libft/libft.h"
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
+
+# include <stdarg.h>
+# include <unistd.h>
+# include "../libft/libft.h"
 
 int	ft_putchar(char c);
 int	ft_putnbr(int nbr);

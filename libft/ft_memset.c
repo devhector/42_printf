@@ -6,13 +6,13 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:34:31 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/03 16:13:24 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:01:51 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void	*s, int	c, size_t	n)
+void	*ft_memset(void	*s, int c, size_t	n)
 {
 	char	*p;
 

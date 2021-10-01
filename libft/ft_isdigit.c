@@ -6,11 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:33:47 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/02 16:33:49 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:10:18 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int	c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

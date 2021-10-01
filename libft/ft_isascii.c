@@ -6,11 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:33:39 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/02 16:33:40 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:14:02 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

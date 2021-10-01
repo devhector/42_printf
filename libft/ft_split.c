@@ -6,16 +6,16 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 16:04:27 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/14 14:25:41 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:03:17 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static char		**free_all(char	**s, size_t	n);
-static size_t	count_word(char const	*s, char	c);
-static size_t	count_words(char const	*s, char	c);
-static char		**split(char	**result, char const	*s, char	c);
+static size_t	count_word(char const	*s, char c);
+static size_t	count_words(char const	*s, char c);
+static char		**split(char	**result, char const	*s, char c);
 
 char	**ft_split(char const	*s, char c)
 {
@@ -31,7 +31,7 @@ char	**ft_split(char const	*s, char c)
 	return (split(result, s, c));
 }
 
-static size_t	count_words(char const	*s, char	c)
+static size_t	count_words(char const	*s, char c)
 {
 	size_t	i;
 	size_t	counter;
@@ -52,7 +52,7 @@ static size_t	count_words(char const	*s, char	c)
 	return (counter);
 }
 
-static size_t	count_word(char const	*s, char	c)
+static size_t	count_word(char const	*s, char c)
 {
 	size_t	i;
 
@@ -62,7 +62,7 @@ static size_t	count_word(char const	*s, char	c)
 	return (i);
 }
 
-char	**split(char	**result, char const	*s, char	c)
+char	**split(char	**result, char const	*s, char c)
 {
 	size_t	i;
 	size_t	qtd_words;

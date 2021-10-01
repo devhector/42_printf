@@ -6,11 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:33:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/08/02 16:34:00 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 19:04:32 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int	c)
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }
