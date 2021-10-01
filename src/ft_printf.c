@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/01 15:44:49 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 16:36:12 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap);
 
 int	count_hex(unsigned long n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -29,7 +29,7 @@ int	count_hex(unsigned long n)
 	return (i);
 }
 
-char	*hex_to_str(unsigned long n, int base)
+char	*hex_to_str(unsigned long n, char *base)
 {
 	int		size;
 	char	*hex;
@@ -41,23 +41,20 @@ char	*hex_to_str(unsigned long n, int base)
 	hex[size] = '\0';
 	while (size > 0)
 	{
-		if (n % base < 10)
-			hex[size - 1] = n % base + '0';
-		else
-			hex[size - 1] = n % base + 'a' - 10;
-		n = n / base;
+		hex[size - 1] = base[n % 16];
+		n = n / 16;
 		size--;
 	}
 	return (hex);
 }
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write (1, &c, 1);
 	return (1);
 }
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	len;
 
@@ -66,7 +63,7 @@ int ft_putstr(char *str)
 	return (len);
 }
 
-int ft_putnbr(int nbr)
+int	ft_putnbr(int nbr)
 {
 	char	*str;
 	int		len;
@@ -88,7 +85,7 @@ int	putnbr_u(unsigned int nbr)
 	return (len);
 }
 
-int	puthex(unsigned long nbr, int base)
+int	puthex(unsigned long nbr, char *base)
 {
 	char	*str;
 	int		len;
@@ -99,7 +96,7 @@ int	puthex(unsigned long nbr, int base)
 	return (len);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		i;
@@ -119,7 +116,6 @@ int ft_printf(const char *format, ...)
 			ret += ft_putchar(format[i]);
 		i++;
 	}
-	
 	va_end(ap);
 	return (ret);
 }
@@ -137,7 +133,15 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 	else if (fmt[i + 1] == 'u')
 		return (putnbr_u(va_arg(ap, unsigned int)));
 	else if (fmt[i + 1] == 'x' || fmt[i + 1] == 'X')
-		return (puthex(va_arg(ap, unsigned long), 16));
+	{
+		if (fmt[i + 1] == 'X')
+			return (puthex(va_arg(ap, unsigned long), "0123456789ABCDEF"));
+		else
+			return (puthex(va_arg(ap, unsigned long), "0123456789abcdef"));
+	}
+	else if (fmt[i + 1] == 'p')
+		return (ft_putstr("0x") + puthex(va_arg(ap, unsigned long), \
+				"0123456789abcdef"));
 	else
 		return (0);
 }
