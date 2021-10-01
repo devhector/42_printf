@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/01 16:53:45 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:11:30 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,54 +46,6 @@ char	*hex_to_str(unsigned long n, char *base)
 		size--;
 	}
 	return (hex);
-}
-
-int	ft_putchar(char c)
-{
-	write (1, &c, 1);
-	return (1);
-}
-
-int	ft_putstr(char *str)
-{
-	int	len;
-
-	len = ft_strlen(str);
-	write (1, str, len);
-	return (len);
-}
-
-int	ft_putnbr(int nbr)
-{
-	char	*str;
-	int		len;
-
-	str = ft_itoa(nbr);
-	len = ft_putstr(str);
-	free(str);
-	return (len);
-}
-
-int	putnbr_u(unsigned int nbr)
-{
-	char	*str;
-	int		len;
-
-	str = ft_utoa(nbr);
-	len = ft_putstr(str);
-	free(str);
-	return (len);
-}
-
-int	puthex(unsigned long nbr, char *base)
-{
-	char	*str;
-	int		len;
-
-	str = hex_to_str(nbr, base);
-	len = ft_putstr(str);
-	free(str);
-	return (len);
 }
 
 int	ft_printf(const char *format, ...)
