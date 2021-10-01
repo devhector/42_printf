@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/09/30 22:38:45 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/01 15:44:49 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printf_arg(const char *fmt, int i, va_list ap);
 
-int	count_hex(unsigned long long n)
+int	count_hex(unsigned long n)
 {
 	int i;
 
@@ -29,7 +29,7 @@ int	count_hex(unsigned long long n)
 	return (i);
 }
 
-char	*hex_to_str(unsigned long long n, int base)
+char	*hex_to_str(unsigned long n, int base)
 {
 	int		size;
 	char	*hex;
@@ -88,6 +88,17 @@ int	putnbr_u(unsigned int nbr)
 	return (len);
 }
 
+int	puthex(unsigned long nbr, int base)
+{
+	char	*str;
+	int		len;
+
+	str = hex_to_str(nbr, base);
+	len = ft_putstr(str);
+	free(str);
+	return (len);
+}
+
 int ft_printf(const char *format, ...)
 {
 	va_list	ap;
@@ -125,7 +136,8 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 		return (ft_putnbr(va_arg(ap, int)));
 	else if (fmt[i + 1] == 'u')
 		return (putnbr_u(va_arg(ap, unsigned int)));
-
+	else if (fmt[i + 1] == 'x' || fmt[i + 1] == 'X')
+		return (puthex(va_arg(ap, unsigned long), 16));
 	else
 		return (0);
 }
