@@ -6,13 +6,50 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/09/29 21:03:24 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/09/30 22:31:15 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libftprintf.h"
 
 int	ft_printf_arg(const char *fmt, int i, va_list ap);
+
+int	count_hex(unsigned long long n)
+{
+	int i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n = n / 16;
+		i++;
+	}
+	return (i);
+}
+
+char	*hex_to_str(unsigned long long n, int base)
+{
+	int		size;
+	char	*hex;
+
+	size = count_hex(n);
+	hex = (char *)malloc(sizeof(char) * (size + 1));
+	if (!hex)
+		return (NULL);
+	hex[size] = '\0';
+	while (size > 0)
+	{
+		if (n % base < 10)
+			hex[size - 1] = n % base + '0';
+		else
+			hex[size - 1] = n % base + 'a' - 10;
+		n = n / base;
+		size--;
+	}
+	return (hex);
+}
 
 int ft_putchar(char c)
 {
@@ -31,7 +68,13 @@ int ft_putstr(char *str)
 
 int ft_putnbr(int nbr)
 {
-	return (ft_putstr(ft_itoa(nbr)));
+	char	*str;
+	int		len;
+
+	str = ft_itoa(nbr);
+	len = ft_putstr(str);
+	free(str);
+	return (len);
 }
 
 int	put_nbr_u(unsigned int nbr)
@@ -75,6 +118,8 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 	else if (fmt[i + 1] == 'd' || fmt[i + 1] == 'i')
 		return (ft_putnbr(va_arg(ap, int)));
 	else if (fmt[i + 1] == 'u')
-		return (ft_putnbr(va_arg(ap, unsigned int)));
-	return (0);
+		return (put_nbr_u(va_arg(ap, unsigned int)));
+
+	else
+		return (0);
 }
