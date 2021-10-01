@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/09/30 22:36:19 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/09/30 22:38:45 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	putnbr_u(unsigned int nbr)
 	char	*str;
 	int		len;
 
-	str = ft_itoa_u(nbr);
+	str = ft_utoa(nbr);
 	len = ft_putstr(str);
 	free(str);
 	return (len);
