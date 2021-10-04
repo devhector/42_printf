@@ -11,7 +11,7 @@ RM				= /bin/rm -f
 LIBFT_DIR		= ./libft
 LIBFT			= ./libft/libft.a
 
-FT_PRINTF		= ft_printf_utils.c ft_printf.c 
+FT_PRINTF		= ft_printf_utils.c ft_putpointer.c ft_printf.c 
 OBJECTS			= $(FT_PRINTF:.c=.o)
 
 all:				$(NAME)

@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/04 11:49:48 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:25:29 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 			return (puthex(va_arg(ap, unsigned int), "0123456789abcdef"));
 	}
 	else if (fmt[i + 1] == 'p')
-		return (ft_putstr("0x") + puthex(va_arg(ap, unsigned int), \
+		return (ft_putstr("0x") + put_pointer(va_arg(ap, void *), \
 				"0123456789abcdef"));
 	else
 		return (0);
