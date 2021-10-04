@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:03:59 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/03 15:16:28 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:49:48 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printf_arg(const char *fmt, int i, va_list ap);
 
-int	count_hex(unsigned long n)
+int	count_hex(unsigned int n)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	count_hex(unsigned long n)
 	return (i);
 }
 
-char	*hex_to_str(unsigned long n, char *base)
+char	*hex_to_str(unsigned int n, char *base)
 {
 	int		size;
 	char	*hex;
@@ -48,7 +48,7 @@ char	*hex_to_str(unsigned long n, char *base)
 	return (hex);
 }
 
-int	puthex(unsigned long nbr, char *base)
+int	puthex(unsigned int nbr, char *base)
 {
 	char	*str;
 	int		len;
@@ -98,12 +98,12 @@ int	ft_printf_arg(const char *fmt, int i, va_list ap)
 	else if (fmt[i + 1] == 'x' || fmt[i + 1] == 'X')
 	{
 		if (fmt[i + 1] == 'X')
-			return (puthex(va_arg(ap, unsigned long), "0123456789ABCDEF"));
+			return (puthex(va_arg(ap, unsigned int), "0123456789ABCDEF"));
 		else
-			return (puthex(va_arg(ap, unsigned long), "0123456789abcdef"));
+			return (puthex(va_arg(ap, unsigned int), "0123456789abcdef"));
 	}
 	else if (fmt[i + 1] == 'p')
-		return (ft_putstr("0x") + puthex(va_arg(ap, unsigned long), \
+		return (ft_putstr("0x") + puthex(va_arg(ap, unsigned int), \
 				"0123456789abcdef"));
 	else
 		return (0);
