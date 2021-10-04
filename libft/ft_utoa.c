@@ -6,35 +6,48 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 20:33:45 by hectfern          #+#    #+#             */
-/*   Updated: 2021/09/29 21:01:00 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/03 21:44:10 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int		num_len(unsigned int n);
+
 char	*ft_utoa(unsigned int n)
 {
-	char			*p;
-	int				size;
-	unsigned int	x;
+	int				i;
+	unsigned int	aux;
+	char			*ptr;
 
-	x = n;
-	size = 0;
-	while (x > 10)
-	{
-		x /= 10;
-		size++;
-	}
-	p = (char *)malloc(sizeof(p) * (size + 1));
-	if (!p)
+	i = num_len(n);
+	aux = n;
+	ptr = (char *)malloc(sizeof(char) * (i + 1));
+	if (!ptr)
 		return (NULL);
-	p[size + 1] = '\0';
-	while (size >= 0)
+	ptr[i] = '\0';
+	if (aux == 0)
+		ptr[0] = '0';
+	ptr[i--] = '\0';
+	while (aux)
 	{
-		x = n % 10;
-		p[size] = 48 + x;
-		n = n / 10;
-		size--;
+		ptr[i--] = (aux % 10) + '0';
+		aux /= 10;
 	}
-	return (p);
+	return (ptr);
+}
+
+static int	num_len(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }

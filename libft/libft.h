@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:32:03 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/01 19:20:32 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/03 21:42:15 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-char	*ft_utoa(unsigned int n);
 int		ft_atoi(const char *str);
 int		ft_lstsize(t_list	*lst);
 int		ft_strncmp(const char	*s1, const char	*s2, size_t	n);
 int		ft_memcmp(const void	*s1, const void	*s2, size_t	n);
 
 char	*ft_itoa(int n);
+char	*ft_utoa(unsigned int n);
 char	*ft_strdup(const char	*s);
 char	*ft_strchr(const char	*s, int c);
 char	*ft_strrchr(const char	*s, int c);

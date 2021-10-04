@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:25:26 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/03 17:28:47 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/03 21:44:49 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_putstr(char *str)
 {
 	int	len;
 
-	if(!str)
+	if (!str)
 	{
 		write (1, "(null)", 6);
 		return (6);
