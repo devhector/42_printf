@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:18:42 by hectfern          #+#    #+#             */
-/*   Updated: 2021/10/04 12:23:30 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:43:01 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ static char	*hex_to_str(unsigned long n, char *base)
 
 int	put_pointer(void *nbr, char *base)
 {
+	int				len;
+	char			*str;
 	unsigned long	n;
-	char	*str;
-	int		len;
 
 	n = (unsigned long)nbr;
 	str = hex_to_str(n, base);
